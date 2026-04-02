@@ -1,0 +1,2 @@
+2026-04-01 14:07:44.043 Did not auto detect external IP.
+Please go to https://docs.streamlit.io/ for debugging hints.

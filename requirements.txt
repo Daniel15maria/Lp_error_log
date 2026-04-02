@@ -1,0 +1,4 @@
+altair
+openpyxl
+pandas
+streamlit
