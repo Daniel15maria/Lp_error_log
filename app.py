@@ -364,14 +364,22 @@ st.markdown(
     a[href*="github.com"],
     footer,
     footer *,
-    button[title="Open navigation menu"],
-    button[aria-label="Open navigation menu"],
-    button[title="Streamlit menu"],
-    button[aria-label="Show app menu"],
+    button[title*="Open navigation"],
+    button[aria-label*="Open navigation"],
+    button[title*="Streamlit"],
+    button[aria-label*="Streamlit"],
+    button[title*="app menu"],
+    button[aria-label*="app menu"],
+    button[title*="menu"],
+    button[aria-label*="menu"],
     [data-testid="collapsedControl"],
     div[data-testid="stDecoration"],
     div[aria-label="App menu"],
-    div[role="navigation"] {
+    div[role="navigation"],
+    div[style*="position: fixed"][style*="bottom"],
+    div[style*="position: fixed"][style*="right"],
+    button[style*="position: fixed"][style*="bottom"],
+    button[style*="position: fixed"][style*="right"] {
         display: none !important;
         visibility: hidden !important;
     }
