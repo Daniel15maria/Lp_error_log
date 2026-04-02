@@ -1196,6 +1196,7 @@ person_table_columns.extend(
         ("Details", "details", "84px"),
     ]
 )
+
  
 person_table_rows = []
 for row in person_summary_df.itertuples(index=False):
