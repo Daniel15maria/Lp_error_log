@@ -12,7 +12,11 @@ import altair as alt
 import pandas as pd
 import streamlit as st
  
-st.set_page_config(page_title="Error Responsibility Dashboard", layout="wide")
+st.set_page_config(
+    page_title="Error Responsibility Dashboard",
+    page_icon="data/Musigma.png",
+    layout="wide",
+)
  
 DATA_FILE_URL = "https://raw.githubusercontent.com/Daniel15maria/Excel/refs/heads/main/LP_Error_Log.xlsx"
 ASSET_DIR = Path("data")
