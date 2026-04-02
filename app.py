@@ -354,14 +354,28 @@ st.markdown(
     button[title="Open navigation menu"],
     button[aria-label="Open navigation menu"],
     button[title="Streamlit menu"],
+    button[aria-label*="Share"],
+    button[aria-label*="Menu"],
     [data-testid="collapsedControl"],
-    div[data-testid="stDecoration"] {
+    div[data-testid="stDecoration"],
+    div[class*="decoration"],
+    div[role="button"][aria-label*="share"],
+    div[style*="position: fixed"][style*="bottom"],
+    div[style*="position: fixed"][style*="right"],
+    div[style*="position: fixed"][style*="bottom"][style*="right"] {
         display: none !important;
         visibility: hidden !important;
     }
+    .block-container {
+        max-width: 100% !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
     div[data-testid="stHorizontalBlock"]:first-of-type {
         position: sticky;
-        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
         z-index: 1000;
         align-items: center;
         background: rgba(248, 250, 252, 0.97);
@@ -369,6 +383,27 @@ st.markdown(
         padding-top: 0.35rem;
         padding-bottom: 0.35rem;
         border-bottom: 1px solid rgba(0, 146, 210, 0.18);
+        box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+    }
+    div[data-testid="stHorizontalBlock"]:first-of-type > div[data-testid="column"] {
+        display: flex;
+        align-items: center;
+    }
+    div[data-testid="stHorizontalBlock"]:first-of-type > div[data-testid="column"] > div {
+        width: auto;
+        min-height: 58px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    div[data-testid="stHorizontalBlock"]:first-of-type > div[data-testid="column"]:first-child > div {
+        justify-content: flex-start;
+    }
+    div[data-testid="stHorizontalBlock"]:first-of-type > div[data-testid="column"]:nth-child(2) > div {
+        justify-content: center;
+    }
+    div[data-testid="stHorizontalBlock"]:first-of-type > div[data-testid="column"]:last-child > div {
+        justify-content: flex-end;
     }
     div[data-testid="stHorizontalBlock"]:first-of-type > div[data-testid="column"] {
         display: flex;
