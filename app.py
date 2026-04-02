@@ -349,6 +349,16 @@ st.markdown(
     a[data-testid="stAnchorLink"] {
         display: none !important;
     }
+    footer,
+    footer *,
+    button[title="Open navigation menu"],
+    button[aria-label="Open navigation menu"],
+    button[title="Streamlit menu"],
+    [data-testid="collapsedControl"],
+    div[data-testid="stDecoration"] {
+        display: none !important;
+        visibility: hidden !important;
+    }
     div[data-testid="stHorizontalBlock"]:first-of-type {
         position: sticky;
         top: 0;
@@ -431,17 +441,39 @@ st.markdown(
     }
     .filter-shell {
         padding: 1rem 1.1rem 0.35rem 1.1rem;
-        border: 1px solid rgba(0, 146, 210, 0.2);
-        border-radius: 14px;
-        background: linear-gradient(180deg, rgba(0, 146, 210, 0.08) 0%, #ffffff 100%);
-        margin-bottom: 1rem;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(0, 146, 210, 0.22);
+        border-radius: 18px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.95));
+        margin-bottom: 1.5rem;
+        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
     }
     .filter-title {
         font-size: 1.05rem;
         font-weight: 700;
         color: #102a43;
         margin-bottom: 0.2rem;
+    }
+    .filter-subtitle {
+        font-size: 0.9rem;
+        color: #475569;
+        margin-bottom: 0.85rem;
+    }
+    div[data-testid="stTextInput"],
+    div[data-testid="stSelectbox"],
+    div[data-testid="stRadio"],
+    div[data-testid="stMultiselect"],
+    div[data-testid="stDateInput"] {
+        border-radius: 14px !important;
+        border: 1px solid rgba(0, 146, 210, 0.16) !important;
+        background: #ffffff !important;
+        box-shadow: 0 12px 28px rgba(15, 23, 42, 0.04) !important;
+        padding: 0.35rem 0.5rem !important;
+    }
+    div[data-testid="stTextInput"] input,
+    div[data-testid="stSelectbox"] select,
+    div[data-testid="stMultiselect"] input {
+        border-radius: 12px !important;
+        background: #f8fbff !important;
     }
     .filter-subtitle {
         font-size: 0.9rem;
