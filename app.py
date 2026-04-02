@@ -302,15 +302,19 @@ if "file_mtime" not in st.session_state:
     st.session_state.file_mtime = get_file_version()
 
 if "last_refresh_label" not in st.session_state:
-    st.session_state.last_refresh_label = datetime.now().strftime("%d %b %Y, %I:%M:%S %p")
+    st.session_state.last_refresh_label = get_local_timestamp_label()
 
 
 def get_cache_token():
     return (st.session_state.file_mtime, st.session_state.refresh_nonce)
 
 
+def get_local_timestamp_label():
+    return datetime.now().astimezone().strftime("%d %b %Y, %I:%M:%S %p")
+
+
 def set_refresh_timestamp():
-    st.session_state.last_refresh_label = datetime.now().strftime("%d %b %Y, %I:%M:%S %p")
+    st.session_state.last_refresh_label = get_local_timestamp_label()
 
 
 @st.fragment(run_every=AUTO_REFRESH_INTERVAL)
