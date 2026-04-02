@@ -360,13 +360,18 @@ st.markdown(
     a[data-testid="stAnchorLink"] {
         display: none !important;
     }
+    a[href*="streamlit.io"],
+    a[href*="github.com"],
     footer,
     footer *,
     button[title="Open navigation menu"],
     button[aria-label="Open navigation menu"],
     button[title="Streamlit menu"],
+    button[aria-label="Show app menu"],
     [data-testid="collapsedControl"],
-    div[data-testid="stDecoration"] {
+    div[data-testid="stDecoration"],
+    div[aria-label="App menu"],
+    div[role="navigation"] {
         display: none !important;
         visibility: hidden !important;
     }
