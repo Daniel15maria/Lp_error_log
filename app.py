@@ -368,20 +368,23 @@ st.markdown(
     }
     .block-container {
         max-width: 100% !important;
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
+        width: 100% !important;
+        padding: 0.5rem 1rem 2rem 1rem !important;
+        margin: 0 auto !important;
     }
     div[data-testid="stHorizontalBlock"]:first-of-type {
         position: sticky;
-        left: 0;
-        right: 0;
-        width: 100%;
+        top: 0;
+        left: 50%;
+        right: 50%;
+        width: calc(100vw - 2rem) !important;
+        max-width: calc(100vw - 2rem) !important;
+        transform: translateX(-50%);
         z-index: 1000;
         align-items: center;
         background: rgba(248, 250, 252, 0.97);
         backdrop-filter: blur(8px);
-        padding-top: 0.35rem;
-        padding-bottom: 0.35rem;
+        padding: 0.35rem 1rem;
         border-bottom: 1px solid rgba(0, 146, 210, 0.18);
         box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
     }
@@ -440,10 +443,7 @@ st.markdown(
     .stApp {
         background: linear-gradient(180deg, rgba(0, 146, 210, 0.08) 0%, #ffffff 42%);
     }
-    .block-container {
-        padding-top: 0.5rem;
-        padding-bottom: 2rem;
-    }
+    /* block-container padding handled above */
     h1 {
         font-size: 2.25rem !important;
         line-height: 1.2 !important;
