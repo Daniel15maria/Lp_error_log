@@ -298,19 +298,19 @@ def get_file_version():
 if "refresh_nonce" not in st.session_state:
     st.session_state.refresh_nonce = 0
 
-if "file_mtime" not in st.session_state:
-    st.session_state.file_mtime = get_file_version()
-
-if "last_refresh_label" not in st.session_state:
-    st.session_state.last_refresh_label = get_local_timestamp_label()
+def get_local_timestamp_label():
+    return datetime.now().astimezone().strftime("%d %b %Y, %I:%M:%S %p")
 
 
 def get_cache_token():
     return (st.session_state.file_mtime, st.session_state.refresh_nonce)
 
 
-def get_local_timestamp_label():
-    return datetime.now().astimezone().strftime("%d %b %Y, %I:%M:%S %p")
+if "file_mtime" not in st.session_state:
+    st.session_state.file_mtime = get_file_version()
+
+if "last_refresh_label" not in st.session_state:
+    st.session_state.last_refresh_label = get_local_timestamp_label()
 
 
 def set_refresh_timestamp():
